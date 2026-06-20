@@ -39,7 +39,7 @@ export default function Home() {
         <div className="hero-actions">
           <Link to="/downloads" className="btn btn-primary">Download JARVIS-AI</Link>
           <a
-            href="https://github.com/"
+            href="https://github.com/alfaazkhanofficial/J4E"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-ghost"

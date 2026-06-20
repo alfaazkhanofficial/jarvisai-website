@@ -46,7 +46,7 @@ export default function Navbar() {
             <Link to="/login" className={isActive('/login') ? 'is-active' : ''}>Login</Link>
           )}
           <a
-            href="https://github.com/"
+            href="https://github.com/alfaazkhanofficial/J4E"
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-github"
@@ -80,7 +80,7 @@ export default function Navbar() {
           ) : (
             <Link to="/login">Login</Link>
           )}
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/alfaazkhanofficial/J4E" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       )}
     </header>
