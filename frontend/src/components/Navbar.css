@@ -5,35 +5,37 @@
   right: 0;
   z-index: 100;
   display: flex;
-  justify-content: center;
-  padding: 20px 24px 0;
-  transition: padding 0.3s ease;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 24px 0;
+  transition: padding 0.25s ease;
 }
 
 .navbar-wrap.is-scrolled {
-  padding-top: 12px;
+  padding-top: 10px;
 }
 
 .navbar {
+  position: relative;
+  z-index: 101;
   width: 100%;
-  max-width: 1180px;
+  max-width: 1140px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  padding: 16px 30px;
-  border-radius: 16px;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  padding: 14px 24px;
+  border-radius: 12px;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.15rem;
-  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
   white-space: nowrap;
 }
@@ -41,14 +43,13 @@
 .navbar-brand-mark {
   display: inline-flex;
   color: var(--white);
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
 }
 
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 28px;
-  font-size: 0.92rem;
+  gap: 26px;
+  font-size: 0.88rem;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -76,15 +77,14 @@
   left: 0;
   right: 0;
   bottom: -6px;
-  height: 2px;
+  height: 1.5px;
   background: var(--white);
   border-radius: 2px;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
 }
 
 .navbar-user {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--white) !important;
 }
 
@@ -108,22 +108,24 @@
 
 .navbar-burger span {
   display: block;
-  width: 20px;
-  height: 2px;
+  width: 18px;
+  height: 1.5px;
   background: var(--text-primary);
   border-radius: 2px;
 }
 
 .navbar-mobile {
-  margin-top: 10px;
+  position: relative;
+  z-index: 100;
+  margin-top: 8px;
   width: calc(100% - 48px);
-  max-width: 1180px;
-  border-radius: 16px;
-  padding: 18px 24px;
+  max-width: 1140px;
+  border-radius: 12px;
+  padding: 16px 22px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  font-size: 1rem;
+  gap: 14px;
+  font-size: 0.95rem;
 }
 
 @media (max-width: 860px) {

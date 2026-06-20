@@ -1,27 +1,27 @@
 /* ============================================================
-   JARVIS-AI — Design Tokens (monochrome: black & white only)
+   JARVIS-AI — Design Tokens
+   Monochrome, minimal. Glass reserved for navbar + cards only.
    ============================================================ */
 :root {
   /* Color */
   --bg-void: #000000;
-  --bg-panel: rgba(255, 255, 255, 0.06);
-  --bg-panel-strong: rgba(255, 255, 255, 0.1);
-  --border-glass: rgba(255, 255, 255, 0.16);
-  --border-glass-strong: rgba(255, 255, 255, 0.3);
+  --bg-panel: rgba(255, 255, 255, 0.05);
+  --bg-panel-strong: rgba(255, 255, 255, 0.08);
+  --border-hairline: rgba(255, 255, 255, 0.1);
+  --border-hairline-strong: rgba(255, 255, 255, 0.22);
   --white: #ffffff;
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --text-tertiary: #757575;
+  --text-primary: #fafafa;
+  --text-secondary: #a3a3a3;
+  --text-tertiary: #6b6b6b;
 
   /* Type */
-  --font-display: 'Orbitron', sans-serif;
-  --font-body: 'Space Grotesk', sans-serif;
+  --font-sans: 'Inter', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout */
-  --max-width: 1200px;
-  --radius-glass: 18px;
-  --radius-pill: 999px;
+  --max-width: 1140px;
+  --radius-card: 14px;
+  --radius-control: 10px;
 }
 
 * {
@@ -48,8 +48,9 @@ html {
 body {
   background: var(--bg-void);
   color: var(--text-primary);
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -93,40 +94,37 @@ input {
 }
 
 /* ============================================================
-   Liquid glass utility
+   Glass — reserved for navbar + cards only
    ============================================================ */
 .glass {
   background: var(--bg-panel);
-  border: 1px solid var(--border-glass);
-  backdrop-filter: blur(20px) saturate(100%);
-  -webkit-backdrop-filter: blur(20px) saturate(100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-hairline);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .glass-strong {
   background: var(--bg-panel-strong);
-  border: 1px solid var(--border-glass-strong);
-  backdrop-filter: blur(24px) saturate(100%);
-  -webkit-backdrop-filter: blur(24px) saturate(100%);
+  border: 1px solid var(--border-hairline-strong);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 /* ============================================================
-   Typography helpers
+   Typography
    ============================================================ */
 .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--text-tertiary);
 }
 
 .display {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
 }
 
 .mono {
@@ -142,51 +140,48 @@ input {
 }
 
 /* ============================================================
-   Buttons
+   Buttons — flat, no glass/blur
    ============================================================ */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-control);
+  font-size: 0.9rem;
   font-weight: 600;
-  font-family: var(--font-body);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+  font-family: var(--font-sans);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
   white-space: nowrap;
 }
 
 .btn:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .btn-primary {
   background: var(--white);
   color: #000000;
-  box-shadow: 0 4px 24px rgba(255, 255, 255, 0.15);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.12), 0 6px 28px rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
+  opacity: 0.85;
 }
 
 .btn-ghost {
-  background: var(--bg-panel);
-  border: 1px solid var(--border-glass);
+  background: transparent;
+  border: 1px solid var(--border-hairline-strong);
   color: var(--text-primary);
-  backdrop-filter: blur(12px);
 }
 
 .btn-ghost:hover {
-  border-color: var(--border-glass-strong);
-  background: var(--bg-panel-strong);
+  background: var(--bg-panel);
+  border-color: var(--white);
 }
 
 .btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
   transform: none !important;
 }
@@ -203,7 +198,7 @@ input {
 .page {
   position: relative;
   min-height: 100vh;
-  padding-top: 110px;
+  padding-top: 96px;
   display: flex;
   flex-direction: column;
 }
@@ -213,12 +208,17 @@ input {
    ============================================================ */
 .site-footer {
   margin-top: auto;
-  padding: 28px 24px 36px;
+  padding: 24px 24px 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.82rem;
-  border-top: 1px solid var(--border-glass);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.site-footer a:hover {
+  color: var(--text-primary);
 }
 
 /* ============================================================
@@ -231,9 +231,9 @@ input {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.28);
 }

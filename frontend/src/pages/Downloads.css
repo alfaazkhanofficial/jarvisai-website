@@ -1,28 +1,28 @@
 .downloads-page {
-  padding-bottom: 100px;
+  padding-bottom: 90px;
   align-items: center;
 }
 
 .downloads-container {
-  max-width: 720px;
+  max-width: 680px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 16px;
-  padding-top: 30px;
+  gap: 14px;
+  padding-top: 24px;
 }
 
 .downloads-sub {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   line-height: 1.6;
-  max-width: 540px;
-  margin-bottom: 14px;
+  max-width: 500px;
+  margin-bottom: 12px;
 }
 
 .download-card {
-  border-radius: 20px;
-  padding: 28px 30px;
+  border-radius: var(--radius-card);
+  padding: 24px 26px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,15 +35,15 @@
 .download-card-info {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .download-card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--border-glass-strong);
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-hairline-strong);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,29 +52,29 @@
 }
 
 .download-card-info h3 {
-  font-size: 1.1rem;
+  font-size: 1.02rem;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
 .download-meta {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
 }
 
 .download-error {
   color: var(--text-primary);
   font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.download-note {
   font-size: 0.88rem;
 }
 
+.download-note {
+  font-size: 0.86rem;
+}
+
 .download-steps {
-  margin-top: 30px;
-  padding-top: 26px;
-  border-top: 1px solid var(--border-glass);
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-hairline);
   width: 100%;
   text-align: left;
 }
@@ -83,13 +83,13 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 11px;
+  margin-top: 14px;
 }
 
 .download-steps li {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   display: flex;
   gap: 10px;
 }
@@ -100,23 +100,23 @@
 }
 
 .download-steps code {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-hairline);
   padding: 2px 7px;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-primary);
 }
 
 .download-credit {
-  margin-top: 18px;
-  font-size: 0.85rem;
+  margin-top: 16px;
+  font-size: 0.82rem;
 }
 
 .download-credit a {
   color: var(--text-primary);
   text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.4);
+  text-decoration-color: rgba(255, 255, 255, 0.35);
 }
 
 .download-credit a:hover {

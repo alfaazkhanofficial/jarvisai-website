@@ -39,7 +39,7 @@ export default function Home() {
         <div className="hero-actions">
           <Link to="/downloads" className="btn btn-primary">Download JARVIS-AI</Link>
           <a
-            href="https://github.com/alfaazkhanofficial/J4E"
+            href="https://github.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-ghost"
@@ -47,7 +47,7 @@ export default function Home() {
             View source
           </a>
         </div>
-        <p className="hero-meta mono text-tertiary">python run.py → http://localhost:8000</p>
+        <code className="hero-command mono">python run.py</code>
       </section>
 
       <section className="features container">
