@@ -1,0 +1,150 @@
+.home-page {
+  padding-bottom: 80px;
+  align-items: center;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+  padding-top: 50px;
+  padding-bottom: 60px;
+  max-width: 640px;
+}
+
+.hero-title {
+  font-size: 3.1rem;
+  line-height: 1.08;
+  color: var(--text-primary);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.hero-sub {
+  font-size: 1.08rem;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.hero-meta {
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.hero-meta::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: var(--white);
+  margin-left: 4px;
+  vertical-align: text-bottom;
+  animation: blink-cursor 1.1s steps(1) infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* Features */
+.features {
+  padding: 60px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features-eyebrow {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.feature-card {
+  padding: 26px 22px;
+  border-radius: var(--radius-glass);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-glass-strong);
+}
+
+.feature-label {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.feature-card h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* CTA banner */
+.cta-banner {
+  padding: 30px 24px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-banner-inner {
+  border-radius: 24px;
+  padding: 40px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.cta-banner-inner h2 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 980px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

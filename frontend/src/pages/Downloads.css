@@ -1,0 +1,134 @@
+.downloads-page {
+  padding-bottom: 100px;
+  align-items: center;
+}
+
+.downloads-container {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding-top: 30px;
+}
+
+.downloads-sub {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 14px;
+}
+
+.download-card {
+  border-radius: 20px;
+  padding: 28px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+}
+
+.download-card-info {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.download-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.download-card-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.download-meta {
+  font-size: 0.82rem;
+}
+
+.download-error {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.download-note {
+  font-size: 0.88rem;
+}
+
+.download-steps {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-glass);
+  width: 100%;
+  text-align: left;
+}
+
+.download-steps ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.download-steps li {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  display: flex;
+  gap: 10px;
+}
+
+.download-steps li span {
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.download-steps code {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-glass);
+  padding: 2px 7px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.download-credit {
+  margin-top: 18px;
+  font-size: 0.85rem;
+}
+
+.download-credit a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+
+.download-credit a:hover {
+  text-decoration-color: var(--white);
+}
+
+@media (max-width: 560px) {
+  .download-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .download-card .btn {
+    width: 100%;
+  }
+}

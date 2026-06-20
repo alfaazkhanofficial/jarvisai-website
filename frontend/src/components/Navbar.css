@@ -1,0 +1,136 @@
+.navbar-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 20px 24px 0;
+  transition: padding 0.3s ease;
+}
+
+.navbar-wrap.is-scrolled {
+  padding-top: 12px;
+}
+
+.navbar {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 30px;
+  border-radius: 16px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.navbar-brand-mark {
+  display: inline-flex;
+  color: var(--white);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.navbar-links a,
+.navbar-links button.navbar-user {
+  position: relative;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  padding: 4px 0;
+}
+
+.navbar-links a:hover,
+.navbar-links button.navbar-user:hover {
+  color: var(--text-primary);
+}
+
+.navbar-links a.is-active {
+  color: var(--white);
+}
+
+.navbar-links a.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.navbar-user {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--white) !important;
+}
+
+.navbar-github {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+}
+
+.navbar-github:hover {
+  color: var(--text-primary);
+}
+
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+}
+
+.navbar-burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+}
+
+.navbar-mobile {
+  margin-top: 10px;
+  width: calc(100% - 48px);
+  max-width: 1180px;
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1rem;
+}
+
+@media (max-width: 860px) {
+  .navbar-links {
+    display: none;
+  }
+  .navbar-burger {
+    display: flex;
+  }
+}

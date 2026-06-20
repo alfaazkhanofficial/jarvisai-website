@@ -1,0 +1,103 @@
+.login-page {
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto;
+  border-radius: 24px;
+  padding: 38px 36px;
+}
+
+.login-tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 28px;
+}
+
+.login-tabs button {
+  flex: 1;
+  padding: 9px 0;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.login-tabs button.is-active {
+  background: var(--white);
+  color: #000000;
+}
+
+.login-title {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.login-sub {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 26px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-field span {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.login-field input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.login-field input:focus {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.login-field input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.login-error {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.login-submit {
+  margin-top: 6px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 24px;
+    border-radius: 20px;
+  }
+}
