@@ -11,8 +11,8 @@
   --bg-pill: rgba(255, 255, 255, 0.06);
   --border-hairline: rgba(255, 255, 255, 0.1);
   --border-hairline-strong: rgba(255, 255, 255, 0.22);
-  --glass-bg: rgba(20, 20, 24, 0.55);
-  --glass-bg-strong: rgba(24, 24, 28, 0.7);
+  --glass-bg: rgba(20, 20, 24, 0.78);
+  --glass-bg-strong: rgba(24, 24, 28, 0.88);
   --glass-border: rgba(255, 255, 255, 0.14);
   --white: #ffffff;
   --text-primary: #fafafa;
@@ -135,15 +135,15 @@ input, textarea {
 .glass {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
 }
 
 .glass-strong {
   background: var(--glass-bg-strong);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(24px) saturate(150%);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(32px) saturate(160%);
+  -webkit-backdrop-filter: blur(32px) saturate(160%);
 }
 
 /* ============================================================
