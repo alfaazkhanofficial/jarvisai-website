@@ -7,12 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px 24px 0;
-  transition: padding 0.25s ease;
-}
-
-.navbar-wrap.is-scrolled {
-  padding-top: 10px;
+  padding: 20px 24px 0;
 }
 
 .navbar {
@@ -23,80 +18,59 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  padding: 14px 24px;
-  border-radius: 12px;
+  gap: 20px;
+  padding: 12px 16px 12px 24px;
+  border-radius: 18px;
 }
 
 .navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 1.05rem;
+  font-weight: 800;
+  font-size: 1.1rem;
   letter-spacing: -0.01em;
   color: var(--text-primary);
   white-space: nowrap;
 }
 
-.navbar-brand-mark {
-  display: inline-flex;
-  color: var(--white);
-}
-
-.navbar-links {
+.navbar-actions {
   display: flex;
   align-items: center;
-  gap: 26px;
-  font-size: 0.88rem;
-  font-weight: 500;
+  gap: 8px;
+}
+
+.navbar-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.15s ease, background 0.15s ease;
   white-space: nowrap;
 }
 
-.navbar-links a,
-.navbar-links button.navbar-user {
-  position: relative;
-  color: var(--text-secondary);
-  transition: color 0.2s ease;
-  padding: 4px 0;
-}
-
-.navbar-links a:hover,
-.navbar-links button.navbar-user:hover {
+.navbar-pill-btn:hover {
   color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.06);
 }
 
-.navbar-links a.is-active {
-  color: var(--white);
-}
-
-.navbar-links a.is-active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -6px;
-  height: 1.5px;
+.navbar-pill-btn-solid {
   background: var(--white);
-  border-radius: 2px;
+  color: #000000;
 }
 
-.navbar-user {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--white) !important;
+.navbar-pill-btn-solid:hover {
+  background: var(--white);
+  color: #000000;
+  opacity: 0.85;
 }
 
-.navbar-github {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--text-secondary);
-}
-
-.navbar-github:hover {
-  color: var(--text-primary);
+.navbar-pill-btn-icon {
+  padding: 9px;
+  width: 36px;
+  height: 36px;
+  justify-content: center;
 }
 
 .navbar-burger {
@@ -120,7 +94,7 @@
   margin-top: 8px;
   width: calc(100% - 48px);
   max-width: 1140px;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 16px 22px;
   display: flex;
   flex-direction: column;
@@ -128,8 +102,26 @@
   font-size: 0.95rem;
 }
 
-@media (max-width: 860px) {
-  .navbar-links {
+.navbar-mobile a,
+.navbar-mobile button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile button:hover {
+  color: var(--text-primary);
+}
+
+.navbar-mobile-user {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 760px) {
+  .navbar-actions {
     display: none;
   }
   .navbar-burger {

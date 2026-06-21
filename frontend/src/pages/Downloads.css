@@ -1,6 +1,29 @@
 .downloads-page {
-  padding-bottom: 90px;
+  padding-bottom: 80px;
   align-items: center;
+}
+
+.downloads-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+  padding-top: 8px;
+  margin-bottom: 24px;
+}
+
+.downloads-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
+}
+
+.downloads-back:hover {
+  color: var(--text-primary);
 }
 
 .downloads-container {
@@ -10,96 +33,126 @@
   align-items: center;
   text-align: center;
   gap: 14px;
-  padding-top: 24px;
+  padding-top: 16px;
 }
 
 .downloads-sub {
   font-size: 1.02rem;
-  line-height: 1.6;
-  max-width: 500px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-.download-card {
-  border-radius: var(--radius-card);
-  padding: 24px 26px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+.download-gate-card {
   width: 100%;
-  text-align: left;
-}
-
-.download-card-info {
+  padding: 44px 32px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+  margin-top: 8px;
 }
 
-.download-card-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 10px;
+.lock-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-hairline-strong);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.lock-icon-open {
   color: var(--white);
-  flex-shrink: 0;
 }
 
-.download-card-info h3 {
-  font-size: 1.02rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+.download-gate-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
-.download-meta {
-  font-size: 0.8rem;
+.gate-btn {
+  margin-top: 14px;
+}
+
+.gate-footnote {
+  font-size: 0.82rem;
+  margin-top: 6px;
 }
 
 .download-error {
   color: var(--text-primary);
   font-weight: 600;
   font-size: 0.88rem;
+  margin-top: 8px;
 }
 
-.download-note {
-  font-size: 0.86rem;
-}
-
-.download-steps {
-  margin-top: 26px;
-  padding-top: 22px;
-  border-top: 1px solid var(--border-hairline);
+.included-card,
+.quickstart-card {
   width: 100%;
+  padding: 28px 30px;
   text-align: left;
 }
 
-.download-steps ol {
+.included-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.included-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.included-check {
+  color: var(--text-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.included-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
+.included-body {
+  font-size: 0.85rem;
+}
+
+.quickstart-card .pill-badge {
+  margin-bottom: 16px;
+}
+
+.quickstart-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 11px;
-  margin-top: 14px;
 }
 
-.download-steps li {
+.quickstart-list li {
   color: var(--text-secondary);
   font-size: 0.92rem;
   display: flex;
   gap: 10px;
 }
 
-.download-steps li span {
+.quickstart-list li span {
   color: var(--white);
   flex-shrink: 0;
 }
 
-.download-steps code {
+.quickstart-list code {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-hairline);
   padding: 2px 7px;
@@ -109,7 +162,7 @@
 }
 
 .download-credit {
-  margin-top: 16px;
+  margin-top: 8px;
   font-size: 0.82rem;
 }
 
@@ -124,11 +177,12 @@
 }
 
 @media (max-width: 560px) {
-  .download-card {
-    flex-direction: column;
-    align-items: stretch;
+  .included-grid {
+    grid-template-columns: 1fr;
   }
-  .download-card .btn {
-    width: 100%;
+  .download-gate-card,
+  .included-card,
+  .quickstart-card {
+    padding: 24px 20px;
   }
 }

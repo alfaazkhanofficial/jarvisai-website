@@ -1,18 +1,24 @@
 /* ============================================================
    JARVIS-AI — Design Tokens
-   Monochrome, minimal. Glass reserved for navbar + cards only.
+   Inspired by jarvis4everyone.com: frosted glass navbar,
+   dark card panels, pill badges, big rounded section containers.
    ============================================================ */
 :root {
   /* Color */
   --bg-void: #000000;
-  --bg-panel: rgba(255, 255, 255, 0.05);
-  --bg-panel-strong: rgba(255, 255, 255, 0.08);
+  --bg-panel: #000000;
+  --bg-panel-soft: #0f1013;
+  --bg-pill: rgba(255, 255, 255, 0.06);
   --border-hairline: rgba(255, 255, 255, 0.1);
   --border-hairline-strong: rgba(255, 255, 255, 0.22);
+  --glass-bg: rgba(20, 20, 24, 0.55);
+  --glass-bg-strong: rgba(24, 24, 28, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.14);
   --white: #ffffff;
   --text-primary: #fafafa;
   --text-secondary: #a3a3a3;
   --text-tertiary: #6b6b6b;
+  --star: #fbbf24;
 
   /* Type */
   --font-sans: 'Inter', -apple-system, sans-serif;
@@ -20,8 +26,10 @@
 
   /* Layout */
   --max-width: 1140px;
-  --radius-card: 14px;
+  --radius-section: 32px;
+  --radius-card: 16px;
   --radius-control: 10px;
+  --radius-pill: 999px;
 }
 
 * {
@@ -73,7 +81,7 @@ button {
   color: inherit;
 }
 
-input {
+input, textarea {
   font-family: inherit;
 }
 
@@ -84,46 +92,102 @@ input {
 }
 
 /* ============================================================
-   Ambient background — pure black, fixed behind all pages
+   Ambient background — pure black with faint geometric line art,
+   echoing the reference site's subtle constellation lines
    ============================================================ */
 .ambient-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   background: #000000;
+  overflow: hidden;
+}
+
+.ambient-bg::before,
+.ambient-bg::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.ambient-bg::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: -100px;
+  border-radius: 4px;
+  transform: rotate(35deg);
+}
+
+.ambient-bg::after {
+  width: 280px;
+  height: 280px;
+  bottom: 8%;
+  left: -80px;
+  border-radius: 4px;
+  transform: rotate(-20deg);
 }
 
 /* ============================================================
-   Glass — reserved for navbar + cards only
+   Frosted glass — navbar only (true blur + visible border)
    ============================================================ */
 .glass {
-  background: var(--bg-panel);
-  border: 1px solid var(--border-hairline);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
 
 .glass-strong {
-  background: var(--bg-panel-strong);
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+}
+
+/* ============================================================
+   Section panel — large rounded dark container wrapping a section
+   ============================================================ */
+.section-panel {
+  background: var(--bg-void);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-section);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================================
+   Pill badge — small rounded label with leading dot, used
+   throughout as a section eyebrow (Features \u2022 FAQ \u2022 Pricing...)
+   ============================================================ */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--border-hairline-strong);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--bg-pill);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.pill-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--white);
 }
 
 /* ============================================================
    Typography
    ============================================================ */
-.eyebrow {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-tertiary);
-}
-
 .display {
   font-family: var(--font-sans);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
@@ -140,16 +204,16 @@ input {
 }
 
 /* ============================================================
-   Buttons — flat, no glass/blur
+   Buttons
    ============================================================ */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.4rem;
-  border-radius: var(--radius-control);
-  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
   font-weight: 600;
   font-family: var(--font-sans);
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
@@ -170,13 +234,13 @@ input {
 }
 
 .btn-ghost {
-  background: transparent;
+  background: var(--bg-pill);
   border: 1px solid var(--border-hairline-strong);
   color: var(--text-primary);
 }
 
 .btn-ghost:hover {
-  background: var(--bg-panel);
+  background: rgba(255, 255, 255, 0.1);
   border-color: var(--white);
 }
 
@@ -184,6 +248,15 @@ input {
   opacity: 0.4;
   cursor: not-allowed;
   transform: none !important;
+}
+
+/* ============================================================
+   Cards — dark gray panels used in feature/FAQ/checklist grids
+   ============================================================ */
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-card);
 }
 
 /* ============================================================

@@ -276,7 +276,7 @@ def download_info():
 def download_jarvis(
     request: Request,
     db: Session = Depends(get_db),
-    current_user: User | None = Depends(get_current_user_optional),
+    current_user: User = Depends(get_current_user),
 ):
     if not RELEASE_PATH.exists():
         raise HTTPException(
@@ -285,13 +285,13 @@ def download_jarvis(
         )
 
     log = DownloadLog(
-        user_id=current_user.id if current_user else None,
+        user_id=current_user.id,
         filename=RELEASE_FILENAME,
         ip_address=request.client.host if request.client else None,
     )
     db.add(log)
     db.commit()
-    logger.info(f"Download served to {'user:' + current_user.username if current_user else 'anonymous'}")
+    logger.info(f"Download served to user:{current_user.username}")
 
     return FileResponse(
         path=RELEASE_PATH,

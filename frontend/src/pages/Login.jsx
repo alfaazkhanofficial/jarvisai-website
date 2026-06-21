@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Login.css';
 
@@ -33,7 +33,29 @@ export default function Login() {
 
   return (
     <div className="page login-page">
-      <div className="login-card glass-strong">
+      <div className="container login-topbar">
+        <Link to="/" className="downloads-back">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M19 12H5m7-7-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Back to Home
+        </Link>
+      </div>
+
+      <div className="login-card card">
+        <span className="pill-badge login-pill">
+          {mode === 'login' ? 'Welcome Back' : 'Get Started'}
+        </span>
+
+        <h1 className="display login-title">
+          {mode === 'login' ? 'Login to JARVIS-AI' : 'Create your account'}
+        </h1>
+        <p className="text-secondary login-sub">
+          {mode === 'login'
+            ? 'Access your account and download the source code'
+            : 'Sign up — it takes about ten seconds, no email confirmation needed'}
+        </p>
+
         <div className="login-tabs">
           <button
             className={mode === 'login' ? 'is-active' : ''}
@@ -50,15 +72,6 @@ export default function Login() {
             Sign up
           </button>
         </div>
-
-        <h1 className="display login-title">
-          {mode === 'login' ? 'Welcome back' : 'Create your account'}
-        </h1>
-        <p className="text-secondary login-sub">
-          {mode === 'login'
-            ? 'Log in to track your downloads and saved builds.'
-            : 'Sign up — it takes about ten seconds, no email confirmation needed.'}
-        </p>
 
         <form onSubmit={handleSubmit} className="login-form">
           {mode === 'signup' && (
@@ -78,7 +91,7 @@ export default function Login() {
 
           {mode === 'signup' ? (
             <label className="login-field">
-              <span>Email</span>
+              <span>Email Address</span>
               <input
                 type="email"
                 value={form.email}
@@ -89,7 +102,7 @@ export default function Login() {
             </label>
           ) : (
             <label className="login-field">
-              <span>Email or username</span>
+              <span>Email or Username</span>
               <input
                 type="text"
                 value={form.identifier}
@@ -115,8 +128,16 @@ export default function Login() {
           {error && <p className="login-error mono">⚠ {error}</p>}
 
           <button type="submit" className="btn btn-primary login-submit" disabled={submitting}>
-            {submitting ? 'Please wait…' : mode === 'login' ? 'Log in' : 'Create account'}
+            {submitting ? 'Please wait…' : mode === 'login' ? 'Login' : 'Create account'}
           </button>
+
+          <p className="login-switch text-secondary">
+            {mode === 'login' ? (
+              <>New to JARVIS-AI? <button type="button" onClick={() => setMode('signup')}>Create an account</button></>
+            ) : (
+              <>Already have an account? <button type="button" onClick={() => setMode('login')}>Log in</button></>
+            )}
+          </p>
         </form>
       </div>
     </div>
