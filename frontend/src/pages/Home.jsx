@@ -101,18 +101,20 @@ export default function Home() {
     <div className="page home-page">
       {/* Hero */}
       <section className="hero container">
-        <span className="pill-badge">Open source · MIT license</span>
-        <h1 className="display hero-title">
-          Just A Rather<br />Very Intelligent System
-        </h1>
-        <p className="hero-sub text-secondary">
-          A personal AI assistant with a full web UI — chat, voice, vision, and memory,
-          running entirely on your own machine with one command.
-        </p>
-        <div className="hero-actions">
-          <Link to="/downloads" className="btn btn-primary">Download JARVIS-AI</Link>
+        <div className="hero-card card">
+          <span className="pill-badge">Open source · MIT license</span>
+          <h1 className="display hero-title">
+            Just A Rather<br />Very Intelligent System
+          </h1>
+          <p className="hero-sub text-secondary">
+            A personal AI assistant with a full web UI — chat, voice, vision, and memory,
+            running entirely on your own machine with one command.
+          </p>
+          <div className="hero-actions">
+            <Link to="/downloads" className="btn btn-primary">Download JARVIS-AI</Link>
+          </div>
+          <code className="hero-command mono">python run.py</code>
         </div>
-        <code className="hero-command mono">python run.py</code>
       </section>
 
       {/* Features */}

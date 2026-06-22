@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <span className="text-tertiary">© 2026 JARVIS-AI. All rights reserved.</span>
-          <span className="text-tertiary">MIT licensed · originally by Shreshth Kaushik</span>
+          <span className="text-tertiary">MIT licensed · originally by Alfaaz Khan</span>
         </div>
       </div>
     </footer>

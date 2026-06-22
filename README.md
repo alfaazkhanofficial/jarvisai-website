@@ -79,6 +79,6 @@ client-side routes (`/downloads`, `/login`) work on direct page loads / refresh.
 
 ## Attribution
 The source code distributed through this site (J.A.R.V.I.S) was originally built by
-**Shreshth Kaushik** ([theshreshthkaushik.com](https://www.theshreshthkaushik.com/)) and is
+**Alfaaz Khan** ([www.youtube.com/@TezGamerzofficial](https://www.youtube.com/@TezGamerzofficial/)) and is
 released under the MIT license. Attribution is shown on the Downloads page — keep it there
 if you redistribute this project, per the MIT license terms.

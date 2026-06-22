@@ -158,8 +158,8 @@ export default function Downloads() {
 
         <p className="download-credit text-tertiary">
           Originally built by{' '}
-          <a href="https://www.theshreshthkaushik.com/" target="_blank" rel="noopener noreferrer">
-            Shreshth Kaushik
+          <a href="https://www.youtube.com/@TezGamerzofficial" target="_blank" rel="noopener noreferrer">
+            Alfaaz Khan
           </a>{' '}
           — released under the MIT license.
         </p>

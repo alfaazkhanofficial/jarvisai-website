@@ -9,11 +9,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 20px;
   padding-top: 56px;
   padding-bottom: 56px;
-  max-width: 640px;
+}
+
+.hero-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 720px;
+  padding: 48px 44px;
+  border: 1px solid var(--border-hairline-strong);
 }
 
 .hero-title {
@@ -38,7 +47,6 @@
 
 .hero-command {
   display: inline-block;
-  margin-top: 8px;
   padding: 6px 14px;
   font-size: 0.82rem;
   color: var(--text-secondary);
@@ -280,6 +288,9 @@
 }
 
 @media (max-width: 560px) {
+  .hero-card {
+    padding: 32px 22px;
+  }
   .hero-title {
     font-size: 2.1rem;
   }
